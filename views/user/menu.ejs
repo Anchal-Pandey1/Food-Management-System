@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Menu</title>
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font -awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 <style>
@@ -39,7 +39,7 @@
         <img src="image/p1.jpg" alt="Pizza">
         <h3>Pizza</h3>
         <p>₹199</p>
-     <button onclick="addToCart()">Add to Cart</button>
+        <button onclick="addItem(this)">Add to Cart</button>
     </div>
 
     <div class="card">
@@ -228,5 +228,5 @@
 <ul id="cartItems"></ul>
 <h3>Total: ₹<span id="totalPrice">0</span></h3>
 </body>
-<script src="menu.js"></script>
+<script src="/menu.js"></script>
 </html>
