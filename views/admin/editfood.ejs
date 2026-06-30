@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Food</title>
+</head>
+<body>
+
+<h1>Edit Food</h1>
+
+<form action="/admin/update-food/<%= food._id %>" method="POST">
+
+    <label>Name</label><br>
+    <input type="text" name="name" value="<%= food.name %>"><br><br>
+
+    <label>Price</label><br>
+    <input type="number" name="price" value="<%= food.price %>"><br><br>
+
+    <label>Category</label><br>
+    <input type="text" name="category" value="<%= food.category %>"><br><br>
+
+    <label>Image</label><br>
+    <input type="text" name="image" value="<%= food.image %>"><br><br>
+
+    <label>Description</label><br>
+    <textarea name="description"><%= food.description %></textarea><br><br>
+
+    <button type="submit">Update Food</button>
+
+</form>
+
+</body>
+</html>
