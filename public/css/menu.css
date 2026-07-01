@@ -1,3 +1,4 @@
+
 /* Body */
 
 body{
@@ -109,6 +110,7 @@ nav a:hover{
     height: 180px;
     object-fit: cover;
     display: block;
+<<<<<<< HEAD
 }   
 
 #cartItems {
@@ -131,4 +133,6 @@ nav a:hover{
 
 h2, h3 {
     margin-left: 20px;
+=======
+>>>>>>> 04730f0 (updated changes)
 }
