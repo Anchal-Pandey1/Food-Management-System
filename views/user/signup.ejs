@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<div class="signup-box">
+
+<h2>🍔 Create Account</h2>
+
+<form>
+
+<div class="input-box">
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+</div>
+
+<div class="input-box">
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+</div>
+
+<div class="input-box">
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number" required>
+</div>
+
+<div class="input-box">
+<label>Location</label>
+
+<div class="location-box">
+<input type="text" id="location" placeholder="Click Access Location" readonly>
+
+<button type="button" class="location-btn" onclick="getLocation()">
+📍 Access Location
+</button>
+
+</div>
+
+</div>
+
+<div class="input-box">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter Password" required>
+</div>
+
+<div class="input-box">
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+</div>
+
+<div class="show-pass">
+<input type="checkbox" onclick="togglePassword()">
+Show Password
+</div>
+
+<button type="submit" class="signup-btn">
+Sign Up
+</button>
+
+<p class="login-link">
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</form>
+
+</div>
+
+<script src="signup.js"></script>
+
+</body>
+</html>
