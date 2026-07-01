@@ -1,113 +1,511 @@
+/* ===========================
+   Google Font
+=========================== */
 
-/* Body */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
 body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+
+    background:#f7d9e3;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* Header */
-header{
-    background-color: #ff6b35;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-}
-/* Website Name */
-header h1{
-    margin: 0;
+/* ===========================
+      Main Layout
+=========================== */
+
+.page{
+
+    width:1500px;
+    height:900px;
+    display:flex;
+    overflow:hidden;
 }
 
-/* Navigation */
-nav a{
-    text-decoration: none;
-    color: white;
-    margin-left: 20px;
-    font-size: 18px;
+/* ===========================
+        Sidebar
+=========================== */
+
+.sidebar{
+
+    width:250px;
+    background:#efb9c7;
+    padding:40px 25px;
+    border-radius:40px 0 0 40px;
+    display:flex;
+    flex-direction:column;
 }
 
-nav a:hover{
-    color: yellow;
-}
-.logo h2{
-    color: white;
-    margin: 0;
+.logo{
+
+    text-align:center;
+    margin-bottom:60px;
 }
 
-.search input{
-    width: 250px;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
+.logo h1{
+
+    color:#6d1d2d;
+    font-size:34px;
+    margin-top:15px;
 }
 
-nav a:hover{
-    color: yellow;
+.chef{
+
+    width:75px;
+    height:75px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffd7df;
+    border-radius:50%;
+    font-size:34px;
+    color:#d05d83;
 }
-.menu{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+
+.sidebar ul{
+
+    list-style:none;
 }
+
+.sidebar li{
+
+    margin-bottom:25px;
+}
+
+.sidebar a{
+
+    text-decoration:none;
+    color:#74263d;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:18px;
+    font-weight:500;
+    padding:15px 18px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+
+    background:white;
+}
+
+.sidebar .active a{
+
+    background:white;
+    color:#c64873;
+}
+
+/* ===========================
+         Main
+=========================== */
+
+main{
+
+    flex:1;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===========================
+        Cart
+=========================== */
+
+.cart-icon{
+
+    position:absolute;
+    top:30px;
+    right:40px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    color:#c54874;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.cart-icon span{
+
+    position:absolute;
+    top:-5px;
+    right:-5px;
+
+    width:25px;
+    height:25px;
+
+    border-radius:50%;
+
+    background:#ff3b6d;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:13px;
+}
+
+/* ===========================
+      Bottle Shape
+=========================== */
+
+.bottle{
+
+    position:relative;
+    width:1050px;
+    height:820px;
+}
+
+.cap{
+
+    width:170px;
+    height:40px;
+
+    background:#f0a4b8;
+
+    margin:auto;
+
+    border-radius:18px 18px 0 0;
+}
+
+.neck{
+
+    width:120px;
+    height:85px;
+
+    margin:auto;
+
+    background:#ffdbe5;
+
+    border-left:7px solid #ea97ad;
+    border-right:7px solid #ea97ad;
+}
+
+.body{
+
+    width:100%;
+    height:690px;
+
+    background:#fff7fa;
+
+    border:7px solid #e896ab;
+
+    border-radius:120px 120px 90px 90px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:50px 70px;
+}
+
+/* ===========================
+      Heading
+=========================== */
+
+.heading{
+
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading h1{
+
+    font-size:45px;
+    letter-spacing:4px;
+    color:#5b1f2d;
+}
+
+.heading i{
+
+    color:#ff638e;
+    font-size:24px;
+    margin:12px 0;
+}
+
+.heading p{
+
+    color:#777;
+    margin-top:12px;
+    font-size:15px;
+}
+
+.line{
+
+    width:170px;
+    height:2px;
+    background:#f3a5b8;
+    margin:12px auto;
+}
+
+/* ===========================
+        Drinks Grid
+=========================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+/* ===========================
+        Drink Card
+=========================== */
 
 .card{
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    width: 200px;
-    text-align: center;
+
+    background:#fff;
+
+    border:2px solid #f2c0cf;
+
+    border-radius:25px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    transition:.35s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
 }
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+    border-color:#ff7ca6;
+}
+
+/* ===========================
+        Drink Image
+=========================== */
 
 .card img{
-    width: 100%;
-    border-radius: 10px;
+
+    width:95px;
+
+    height:95px;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    background:#fff8fb;
+
+    padding:8px;
 }
 
+/* ===========================
+        Card Text
+=========================== */
+
+.card div{
+
+    flex:1;
+}
+
+.card h3{
+
+    color:#5f2132;
+
+    margin-bottom:8px;
+
+    font-size:20px;
+}
+
+.card h4{
+
+    color:#ff5c8a;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+}
+
+/* ===========================
+        Button
+=========================== */
+
 .card button{
-    background: #ff6b35;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
+
+    background:#ff6b95;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
 }
 
 .card button:hover{
-    background: darkorange;
+
+    background:#e94879;
+
+    transform:scale(1.05);
 }
-.card button{
-    background: #ff6b35;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+
+/* ===========================
+        Scroll
+=========================== */
+
+.body{
+
+    overflow-y:auto;
 }
-#cartCount{
-    background: white;
-    color: #ff6b35;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-size: 12px;
+
+.body::-webkit-scrollbar{
+
+    width:8px;
 }
+
+.body::-webkit-scrollbar-thumb{
+
+    background:#ff9ab9;
+
+    border-radius:20px;
+}
+
+.body::-webkit-scrollbar-track{
+
+    background:#ffeaf1;
+}
+
+/* ===========================
+        Animation
+=========================== */
+
 .card{
-    display: flex;
-    flex-direction: column;
+
+    animation:fade .6s ease;
 }
-.card button{
-    margin-top: 20px;
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
 }
-.card img{
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:1200px){
+
+    .page{
+
+        width:100%;
+        height:auto;
+
+        flex-direction:column;
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        border-radius:0;
+
+        padding:25px;
+    }
+
+    .sidebar ul{
+
+        display:flex;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:20px;
+    }
+
+    .sidebar li{
+
+        margin:0;
+    }
+
+    .bottle{
+
+        width:95%;
+
+        height:auto;
+
+        margin:30px auto;
+    }
+
+    .body{
+
+        height:auto;
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .card{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .heading h1{
+
+        font-size:34px;
+    }
+
+    .body{
+
+        padding:35px;
+    }
+
 }
