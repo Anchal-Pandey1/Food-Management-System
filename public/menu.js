@@ -1,29 +1,79 @@
+console.log("menu.js loaded");
+
+// 1. addItem function
 window.addItem = function(button){
-    console.log("STEP 1: clicked");
 
     const card = button.parentElement;
-    console.log("STEP 2: card found", card);
+    const name = card.querySelector("h3").innerText;
+    const price = card.querySelector("p").innerText;
+    const itemPrice = Number(price.replace(/[^\d]/g, ""));
 
-    const nameEl = card.querySelector("h3");
-    const priceEl = card.querySelector("p");
-
-    console.log("STEP 3: elements found", nameEl, priceEl);
-
-    const name = nameEl.innerText;
-    const price = priceEl.innerText;
+    // 🔥 SEND DATA TO BACKEND HERE
+    fetch("/cart/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            price: itemPrice
+        })
+    });
 
     const cartItems = document.getElementById("cartItems");
-    console.log("STEP 4: cartItems element", cartItems);
+    console.log("Added to backend + UI");
 
-    if(!cartItems){
-        console.error("cartItems NOT FOUND in HTML");
-        return;
+    let existingItem = Array.from(cartItems.children).find(li =>
+        li.dataset.name === name
+    );
+
+    if(existingItem){
+        let qty = parseInt(existingItem.dataset.qty);
+        qty++;
+
+        existingItem.dataset.qty = qty;
+        existingItem.innerText = `${name} - ₹${itemPrice} × ${qty}`;
+
+    } else {
+        const li = document.createElement("li");
+
+        li.dataset.name = name;
+        li.dataset.qty = 1;
+
+        li.innerHTML = `
+            ${name} - ₹${itemPrice} × 1
+            <button onclick="removeItem(this)">❌</button>
+        `;
+
+        cartItems.appendChild(li);
     }
 
-    const li = document.createElement("li");
-    li.innerText = `${name} - ${price}`;
-
-    cartItems.appendChild(li);
-
-    console.log("STEP 5: item added");
+    updateTotal(); // 👈 call function here
 };
+
+
+window.removeItem = function(button){
+
+    const li = button.parentElement;
+
+    li.remove();
+
+    updateTotal();
+};
+
+// 2. updateTotal function (WRITE HERE ↓)
+function updateTotal(){
+    const cartItems = document.getElementById("cartItems");
+    let total = 0;
+
+    Array.from(cartItems.children).forEach(li => {
+        const priceText = li.innerText.match(/₹(\d+)/);
+        const qty = parseInt(li.dataset.qty);
+
+        if(priceText){
+            total += Number(priceText[1]) * qty;
+        }
+    });
+
+    document.getElementById("totalPrice").innerText = total;
+}

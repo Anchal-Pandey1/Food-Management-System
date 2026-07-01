@@ -1,9 +1,16 @@
+const Cart = require("../models/Cart");
+
 exports.addToCart = async (req, res) => {
-    const foodId = req.params.id;
+    const { name, price } = req.body;
 
-    const food = await Food.findById(foodId);
+    let item = await Cart.findOne({ name });
 
-    console.log(food);
+    if(item){
+        item.quantity += 1;
+        await item.save();
+    } else {
+        await Cart.create({ name, price });
+    }
 
-    res.send("Added to cart successfully"); // IMPORTANT
+    res.json({ success: true });
 };

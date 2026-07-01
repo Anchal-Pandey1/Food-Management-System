@@ -1,32 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Edit Food</title>
+
+    <link rel="stylesheet" href="/css/adminHeader.css">
+    <link rel="stylesheet" href="/css/editFood.css">
+
 </head>
+
 <body>
+    <%- include("adminHeader") %>
 
-<h1>Edit Food</h1>
+    <div class="page">
+        <div class="form-card">
 
-<form action="/admin/update-food/<%= food._id %>" method="POST">
+            <h1>✏️ Edit Food</h1>
 
-    <label>Name</label><br>
-    <input type="text" name="name" value="<%= food.name %>"><br><br>
+            <p>Update the selected food item.</p>
 
-    <label>Price</label><br>
-    <input type="number" name="price" value="<%= food.price %>"><br><br>
+            <form action="/admin/update-food/<%= food._id %>" method="POST">
 
-    <label>Category</label><br>
-    <input type="text" name="category" value="<%= food.category %>"><br><br>
+                <div class="input-box">
 
-    <label>Image</label><br>
-    <input type="text" name="image" value="<%= food.image %>"><br><br>
+                    <label>Food Name</label>
 
-    <label>Description</label><br>
-    <textarea name="description"><%= food.description %></textarea><br><br>
+                    <input
+                        type="text"
+                        name="name"
+                        value="<%= food.name %>"
+                        required>
 
-    <button type="submit">Update Food</button>
+                </div>
 
-</form>
+                <div class="input-box">
+
+                    <label>Price</label>
+
+                    <input
+                        type="number"
+                        name="price"
+                        value="<%= food.price %>"
+                        required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Category</label>
+
+                    <input
+                        type="text"
+                        name="category"
+                        value="<%= food.category %>"
+                        required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Image Name</label>
+
+                    <input
+                        type="text"
+                        name="image"
+                        value="<%= food.image %>"
+                        required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Description</label>
+
+                    <textarea
+                        name="description"
+                        rows="4"
+                        required><%= food.description %></textarea>
+
+                </div>
+
+                <div class="btn-group">
+
+                    <button type="submit" class="update-btn">
+                        💾 Update Food
+                    </button>
+
+                    <a href="/admin/dashboard" class="back-btn">
+                        ← Back to Dashboard
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
 
 </body>
+
 </html>

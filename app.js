@@ -15,9 +15,11 @@ connectDb();
 const Food = require("./models/Food");
 
 const cartRoute = require("./routes/cart");
+app.use("/cart", cartRoute);
+
 const adminRoute = require("./routes/admin");
 
-app.use("/cart", cartRoute);
+app.use("/admin", adminRoute);
 
 app.get("/add-food", async (req, res) => {
 

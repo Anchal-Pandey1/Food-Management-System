@@ -30,21 +30,16 @@ exports.addFood = async (req, res) => {
 // Show Dashboard
 exports.dashboard = async (req, res) => {
 
-    try {
+    const foods = await Food.find();
 
-        const foods = await Food.find();
+    const totalFoods = foods.length;
 
-        res.render("admin/dashboard", {
-            foods
-        });
+    res.render("admin/dashboard", {
+        foods,
+        totalFoods
+    });
 
-    } catch (err) {
-
-        console.log(err);
-
-    }
-
-};
+}
 
 exports.showEditPage = async (req, res) => {
 

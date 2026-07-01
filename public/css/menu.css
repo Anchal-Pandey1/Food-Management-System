@@ -1,116 +1,156 @@
-
 /* Body */
 
 body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#f8f8f8;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
+
 header{
-    background-color: #ff6b35;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-}
-/* Website Name */
-header h1{
-    margin: 0;
+    background:#ff6b35;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
 }
 
-/* Navigation */
-nav a{
-    text-decoration: none;
-    color: white;
-    margin-left: 20px;
-    font-size: 18px;
-}
-
-nav a:hover{
-    color: yellow;
-}
 .logo h2{
-    color: white;
-    margin: 0;
+    margin:0;
+    color:white;
 }
 
-.search input{
-    width: 250px;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
 }
 
 nav a:hover{
-    color: yellow;
+    color:yellow;
 }
+
+#cartCount{
+    background:white;
+    color:#ff6b35;
+    padding:2px 7px;
+    border-radius:50%;
+    font-size:12px;
+}
+
+/* =========================
+   Main Layout
+========================= */
+
+.main-content{
+    width:95%;
+    margin:30px auto;
+    display:flex;
+    align-items:flex-start;
+    gap:30px;
+}
+
+.food-section{
+    flex:1;
+}
+
+/* =========================
+   Food Menu
+========================= */
+
 .menu{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:30px;
 }
 
 .card{
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    width: 200px;
-    text-align: center;
+    background:white;
+    width:220px;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+    display:flex;
+    flex-direction:column;
 }
 
 .card img{
-    width: 100%;
-    border-radius: 10px;
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    margin:15px 0 8px;
+}
+
+.card p{
+    font-size:18px;
+    font-weight:bold;
+    color:#ff6b35;
 }
 
 .card button{
-    background: #ff6b35;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
+    margin-top:auto;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#ff6b35;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
 }
 
 .card button:hover{
-    background: darkorange;
+    background:#e85d2b;
 }
-.card button{
-    background: #ff6b35;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+
+/* =========================
+   Cart
+========================= */
+
+.cart-container{
+    width:320px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    position:sticky;
+    top:20px;
+    height:fit-content;
 }
-#cartCount{
-    background: white;
-    color: #ff6b35;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-size: 12px;
+
+.cart-container h2{
+    text-align:center;
+    color:#ff6b35;
+    margin-bottom:20px;
 }
-.card{
-    display: flex;
-    flex-direction: column;
-}
-.card button{
-    margin-top: 20px;
+
+#cartItems{
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 .card img{
     width: 100%;
     height: 180px;
     object-fit: cover;
     display: block;
-<<<<<<< HEAD
 }   
 
 #cartItems {
@@ -133,6 +173,4 @@ nav a:hover{
 
 h2, h3 {
     margin-left: 20px;
-=======
->>>>>>> 04730f0 (updated changes)
 }

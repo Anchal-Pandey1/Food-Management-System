@@ -1,36 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Food</title>
+
+    <link rel="stylesheet" href="/css/adminHeader.css">
+    <link rel="stylesheet" href="/css/addFood.css">
+
 </head>
 
 <body>
+    <%- include("adminHeader") %>
 
-<h1>Add New Food</h1>
+    <div class="page">
+        <div class="form-card">
 
-<form action="/admin/add-food" method="POST">
+        <h1>🍽️ Add New Food</h1>
 
-    <label>Food Name</label><br>
-    <input type="text" name="name"><br><br>
+        <p>Add a new delicious item to the BiteHub menu.</p>
 
-    <label>Price</label><br>
-    <input type="number" name="price"><br><br>
+        <form action="/admin/add-food" method="POST">
 
-    <label>Category</label><br>
-    <input type="text" name="category"><br><br>
+            <div class="input-box">
 
-    <label>Image</label><br>
-    <input type="text" name="image"><br><br>
+                <label>Food Name</label>
 
-    <label>Description</label><br>
-    <textarea name="description"></textarea><br><br>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter food name"
+                    required>
 
-    <button type="submit">
-        Add Food
-    </button>
+            </div>
 
-</form>
+            <div class="input-box">
+
+                <label>Price</label>
+
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Enter price"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Category</label>
+
+                <input
+                    type="text"
+                    name="category"
+                    placeholder="Pizza, Burger, Drinks..."
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Image Name</label>
+
+                <input
+                    type="text"
+                    name="image"
+                    placeholder="Example: i1.jpg"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Description</label>
+
+                <textarea
+                    name="description"
+                    rows="4"
+                    placeholder="Write food description..."
+                    required></textarea>
+
+            </div>
+
+            <button type="submit">
+                ➕ Add Food
+            </button>
+
+        </form>
+
+    </div>
+    </div>
 
 </body>
+
 </html>
